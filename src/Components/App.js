@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Callback from "./Callback"
 import Profile from "./Profile"
+import Login from "./Login"
 import Auth from "../Adapters/Auth"
 import {Route, withRouter} from "react-router-dom"
 import './App.css';
@@ -33,7 +34,7 @@ class App extends Component {
       <div className="App">
         <h1>SPOTIFY API TUTORIAL</h1>
         <br/>
-        { !this.state.currentUser.id ? <Login/> : null}
+        <Login currentUser={this.state.currentUser}/>
         <Route exact path="/callback" component={this.handleCallback} />
         <Route exact path="/profile" component={this.renderProfile} />
       </div>
@@ -41,10 +42,5 @@ class App extends Component {
   }
 }
 
-const Login = () => (
-  <a className="login-a" href="http://localhost:3000/api/v1/auth">
-    LOGIN
-  </a>
-)
 
 export default withRouter(App);
