@@ -3,10 +3,10 @@ import Routes from "./Routes";
 
 export default class RecentTracksAdapter {
     static getRecentTracks() {
-        return fetch(Routes.recent_tracks, 
-            {headers: Headers()}
-            // body: JSON.stringify({ code })
-        ).then(resp => resp.json())
+        return fetch(Routes.recent_tracks, { 
+            method: "GET",
+            headers: Headers()
+        }).then(resp => resp.json())
             .then(console.log)
         
     }

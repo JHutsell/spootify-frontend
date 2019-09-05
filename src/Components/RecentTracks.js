@@ -40,15 +40,16 @@ class RecentTracks extends React.Component {
 
 
     componentDidMount() {
-        RecentTracksAdapter.getRecentTracks()
-        .then( res =>
-            this.setState({
-                recentTracks: res
-            })
-            )
-            debugger
-
-        fetch("http://localhost:3000/api/v1/recent")
+        const trackz = RecentTracksAdapter.getRecentTracks()
+        this.setState({
+            recentTracks: trackz
+        })
+        // .then( res =>
+        //     this.setState({
+        //         recentTracks: res
+        //     })
+        //     )
+            // debugger
     }
 
     render(){
