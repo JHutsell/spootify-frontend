@@ -8,7 +8,7 @@ const Login = ({currentUser}) => {
       </a>
     )
   }
-   return null
+  return null
 }
   
 export default Login;
