@@ -1,8 +1,12 @@
-import React from 'react'
-import RecentTracksAdapter from '../Adapters/RecentTracksAdapter';
+import React from 'react';
+import TopArtistsAdapter from '../Adapters/TopArtistsAdapter';
 
 class TopArtists extends React.Component {
     render(){
+
+        const artz = TopArtistsAdapter.getTopArtists()
+        console.log(artz)
+
         var topArtists = JSON.parse(localStorage.getItem("topArtists"))
         console.log(topArtists)
         let eachArtist = topArtists.map(topArtist => {

@@ -1,18 +1,15 @@
 import React from 'react'
-import RecentTracksAdapter from '../Adapters/RecentTracksAdapter';
+import PlaylistsAdapter from '../Adapters/PlaylistsAdapter';
 import PlaylistDetails from './PlaylistDetails';
-
-// const recentTracks = RecentTracksAdapter.getRecentTracks()
-// debugger
-
-// const allTracks = recentTracks.map(track => {
-    //     return <li>track.name</li>
-    // })
     
 class Playlists extends React.Component {
     render(){
+
+        const listz = PlaylistsAdapter.getPlaylists()
+        console.log(listz)
+        
         var playlists = JSON.parse(localStorage.getItem("playlists"))
-        console.log(playlists)
+        // console.log(playlists)
 
         let allLists = playlists.map(playlist => {
             return <PlaylistDetails playlist={ playlist } />
