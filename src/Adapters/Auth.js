@@ -10,12 +10,4 @@ export default class Auth {
             body: JSON.stringify({ code })
         }).then(res => res.json())
     }
-
-    // static recent_tracks(code) {
-    //     return fetch(Routes.recent_tracks, {
-    //         method: "POST",
-    //         headers: Headers(),
-    //         body: JSON.stringify({ code })
-    //     }).then(res => res.json()) 
-    // }
 }

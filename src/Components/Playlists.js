@@ -18,29 +18,14 @@ class Playlists extends React.Component {
             })
     }
 
-
-    // componentDidMount() {
-    //     RecentTracksAdapter.getRecentTracks()
-    //         .then(res => {
-    //             this.setState({
-    //                 recentTracks: res
-    //             })
-    //         })
-    // }
-    
     render(){
-        // const listz = PlaylistsAdapter.getPlaylists()
-        // console.log(listz)
-        
-        var playlists = JSON.parse(localStorage.getItem("playlists"))
-        // console.log(playlists)
+    
         console.log(this.state)
 
-        let allLists = playlists.map(playlist => {
+        let allLists = this.state.playlists.map(playlist => {
             return <PlaylistDetails playlist={ playlist } />
         })
 
-        // return {allTracks}
         return allLists
     }
 }

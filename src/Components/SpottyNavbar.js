@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom'
 
 class SpottyNavbar extends React.Component {
 
+    handleHomeButton = () => {
+        this.props.history.push("/home")
+    }  
+
     handleProfileClick = () => {
         this.props.history.push("/profile")
     }
