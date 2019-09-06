@@ -7,6 +7,5 @@ export default class TopArtistsAdapter {
             {headers: Headers()}
             // body: JSON.stringify({ code })
         ).then(resp => resp.json())
-            .then(console.log)
     }
 }

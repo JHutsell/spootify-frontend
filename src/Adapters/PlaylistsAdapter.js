@@ -3,10 +3,9 @@ import Routes from "./Routes";
 
 export default class PlaylistsAdapter {
     static getPlaylists() {
-        return fetch(Routes.playlists, 
-            {headers: Headers()}
-            // body: JSON.stringify({ code })
-        ).then(resp => resp.json())
-            .then(console.log)
+        return fetch(Routes.user_playlists, {
+            method: "GET",
+            headers: Headers()
+        }).then(resp => resp.json())            
     }
 }

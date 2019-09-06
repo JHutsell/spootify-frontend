@@ -6,8 +6,6 @@ export default class RecentTracksAdapter {
         return fetch(Routes.recent_tracks, { 
             method: "GET",
             headers: Headers()
-        }).then(resp => resp.json())
-            .then(console.log)
-        
+        }).then(resp => resp.json())        
     }
 }
