@@ -16,8 +16,8 @@ class App extends Component {
   
   state = {
     currentUser: {},
-    nowPlaying: { name: 'Not Checked', albumArt: ''},
-    loggedIn: false
+    loggedIn: false,
+    searchResults: []
   }
 
   handleCode = (code) =>{
@@ -36,17 +36,22 @@ class App extends Component {
   handleCallback = ({location}) => {
     return <Callback location={location} handleCode={this.handleCode} />
   }
-
-  handleSearch = (term) => {
-    this.getSongsFromSpotify(term)
-  }
-
+  
   getSongsFromSpotify = (term) => {
     fetch(`http://localhost:3000/api/v1/getSong/${term}`, {
-          method: "POST",
-          headers: Headers()
+      method: "POST",
+      headers: Headers()
     }).then(resp => resp.json())
-    
+      .then(data => {
+        // localStorage.setItem("searchResults", JSON.stringify(data.tracks.items))
+        this.setState({
+          searchResults: data.tracks.items
+        })
+      })
+  }
+
+  handleSearchSong = (term) => {
+    this.getSongsFromSpotify(term)
   }
 
   render() {
@@ -54,7 +59,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>BOOTS_AND_PANTS_AND_BOOTS_AND_PANTS</h1>
-        <SpottyNavbar handleSearch={ this.handleSearch } history={ this.props.history }/>
+        <SpottyNavbar handleSearchSong={ this.handleSearchSong } searchResults={ this.state.searchResults } history={ this.props.history }/>
         <br/>
         { localStorage.length === 0 
         ?

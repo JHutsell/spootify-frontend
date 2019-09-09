@@ -1,11 +1,13 @@
 import React from 'react';
 import { Navbar, Nav, Form, FormControl, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
+import SpottyModal from './SpottyModal';
 
 class SpottyNavbar extends React.Component {
 
     state = {
-        searchTerm: ''
+        searchTerm: '',
+        showModal: false
     }
 
     handleHomeButton = () => {
@@ -33,6 +35,18 @@ class SpottyNavbar extends React.Component {
         this.props.history.push("/login")
     }
 
+    toggleModal = () => {
+        this.setState({
+            showModal: !this.state.showModal
+        });
+    }
+
+    handleCloseModal = () => {
+        this.setState({
+            showModal: false
+        });
+    }
+
     handleSearchInput = (e) => {
         this.setState({
             searchTerm: e.target.value
@@ -42,12 +56,15 @@ class SpottyNavbar extends React.Component {
     handleSearchSubmit = (e) => {
         e.preventDefault()
         console.log("search")
-        this.props.history.push("/home")
-    //    if (this.state.searchTerm!==
-    //     "") this.props.handleSearchRestaurant(this.state.searchTerm)
-    // possibly modal as result
+        // this.toggleModal()
+        this.setState({
+            showModal: true
+        });
+        // this.props.history.push("/home")
+        if (this.state.searchTerm!==
+        "") this.props.handleSearchSong(this.state.searchTerm)
     }
-
+    
     render() {
         return(
             <div className="navbar-container">
@@ -57,9 +74,10 @@ class SpottyNavbar extends React.Component {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
                         <Nav.Link onClick={ this.handleProfileClick } href="#home">My Profile</Nav.Link>
-                            <Nav.Link onClick={ this.handlePlaylistClick } href="#home">My Playlists</Nav.Link>
-                            <Nav.Link onClick={ this.handleRecentTracksClick } href="#home">My Recent Tracks</Nav.Link>
-                            <Nav.Link onClick={ this.handleTopArtistsClick } href="#home">My Top Artists</Nav.Link>
+                        <Nav.Link onClick={ this.handlePlaylistClick } href="#home">My Playlists</Nav.Link>
+                        <Nav.Link onClick={ this.handleRecentTracksClick } href="#home">My Recent Tracks</Nav.Link>
+                        <Nav.Link onClick={ this.handleTopArtistsClick } href="#home">My Top Artists</Nav.Link>
+                    <SpottyModal searchResults={ this.props.searchResults } showModal={ this.state.showModal } onClose={ this.handleCloseModal }/>
                             {/* <Nav.Link href="#link">Link</Nav.Link>
                             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
