@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import Callback from "./Callback"
-import Home from "./Home"
-import Profile from "./Profile"
-import Login from "./Login"
-import RecentTracks from "./RecentTracks"
-import Playlists from "./Playlists"
-import TopArtists from "./TopArtists"
+import Callback from "./Callback";
+import Home from "./Home";
+import Profile from "./Profile";
+import Login from "./Login";
+import RecentTracks from "./RecentTracks";
+import Playlists from "./Playlists";
+import TopArtists from "./TopArtists";
+import Headers from "../Adapters/Headers";
 import SpottyNavbar from './SpottyNavbar';
-import Auth from "../Adapters/Auth"
-import RecentTracksAdapter from "../Adapters/RecentTracksAdapter";
-import {Route, withRouter, Switch} from "react-router-dom"
+import Auth from "../Adapters/Auth";
+import {Route, withRouter, Switch} from "react-router-dom";
 import './App.css';
 
 class App extends Component {
@@ -37,12 +37,24 @@ class App extends Component {
     return <Callback location={location} handleCode={this.handleCode} />
   }
 
+  handleSearch = (term) => {
+    this.getSongsFromSpotify(term)
+  }
+
+  getSongsFromSpotify = (term) => {
+    fetch(`http://localhost:3000/api/v1/getSong/${term}`, {
+          method: "POST",
+          headers: Headers()
+    }).then(resp => resp.json())
+    
+  }
+
   render() {
     
     return (
       <div className="App">
         <h1>BOOTS_AND_PANTS_AND_BOOTS_AND_PANTS</h1>
-        <SpottyNavbar history={ this.props.history }/>
+        <SpottyNavbar handleSearch={ this.handleSearch } history={ this.props.history }/>
         <br/>
         { localStorage.length === 0 
         ?

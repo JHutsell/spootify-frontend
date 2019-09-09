@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom'
 
 class SpottyNavbar extends React.Component {
 
+    state = {
+        searchTerm: ''
+    }
+
     handleHomeButton = () => {
         this.props.history.push("/home")
     }  
@@ -29,6 +33,21 @@ class SpottyNavbar extends React.Component {
         this.props.history.push("/login")
     }
 
+    handleSearchInput = (e) => {
+        this.setState({
+            searchTerm: e.target.value
+        })
+    }
+
+    handleSearchSubmit = (e) => {
+        e.preventDefault()
+        console.log("search")
+        this.props.history.push("/home")
+    //    if (this.state.searchTerm!==
+    //     "") this.props.handleSearchRestaurant(this.state.searchTerm)
+    // possibly modal as result
+    }
+
     render() {
         return(
             <div className="navbar-container">
@@ -51,10 +70,10 @@ class SpottyNavbar extends React.Component {
                             </NavDropdown> */}
                             <button onClick={ this.handleLogout }>Logout</button>
                             </Nav>
-                            {/* <Form onSubmit={this.handleSearchSubmit}  inline>
-                            <FormControl type="text" onChange={this.handleSearchInput} value={this.state.searchTerm}  placeholder="Search" className="mr-sm-2" />
+                            <Form onSubmit={this.handleSearchSubmit}  inline>
+                            <FormControl type="text" onChange={ this.handleSearchInput } value={ this.state.searchTerm }  placeholder="Search" className="mr-sm-2" />
                             <button>Search</button>
-                            </Form> */}
+                            </Form>
                     </Navbar.Collapse>
                 </Navbar>
             </div>
