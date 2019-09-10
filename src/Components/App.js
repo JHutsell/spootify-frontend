@@ -43,7 +43,6 @@ class App extends Component {
       headers: Headers()
     }).then(resp => resp.json())
       .then(data => {
-        // localStorage.setItem("searchResults", JSON.stringify(data.tracks.items))
         this.setState({
           searchResults: data.tracks.items
         })
