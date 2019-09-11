@@ -6,8 +6,10 @@ import Login from "./Login";
 import RecentTracks from "./RecentTracks";
 import Playlists from "./Playlists";
 import TopArtists from "./TopArtists";
+import RecommendedTracks from './RecommendedTracks';
 import Headers from "../Adapters/Headers";
 import SpottyNavbar from './SpottyNavbar';
+import RecentTracksAdapter from '../Adapters/RecentTracksAdapter';
 import Auth from "../Adapters/Auth";
 import {Route, withRouter, Switch} from "react-router-dom";
 import './App.css';
@@ -17,7 +19,9 @@ class App extends Component {
   state = {
     currentUser: {},
     loggedIn: false,
-    searchResults: []
+    searchResults: [],
+    reccoBasis: [],
+    reccoTracks: []
   }
 
   handleCode = (code) =>{
@@ -26,9 +30,10 @@ class App extends Component {
         console.log(res)
         localStorage.setItem("jwt", res.auth_response_json.jwt);
         localStorage.setItem("currentUser", JSON.stringify(res.auth_response_json));
+        localStorage.setItem("loggedIn", true)
         this.setState({
           currentUser: res.auth_response_json,
-          loggedIn: true
+          loggedIn: "true"
       }, this.props.history.push("/home"))
       })
   }
@@ -75,6 +80,8 @@ class App extends Component {
         <Route path="/playlists" render={(routerProps)=> <Playlists playlists={ this.state.playlists } {...routerProps} />} />
         <Route path="/topArtists" render={(routerProps)=> <TopArtists topArtists={ this.state.topArtists } {...routerProps} />} />
       </Switch>
+      
+      <RecommendedTracks loggedIn={this.state.loggedIn} reccoTracks={ this.state.reccoTracks }/>
     </div>
     );
   }

@@ -25,35 +25,6 @@ class SpottyModal extends React.Component {
         }).then(resp => resp.json())
     }
 
-    // /tracks?uris=spotify:track:${songUri}
-
-    // addSongToPlaylist = (playlistId, songUri) => {
-    //     return fetch(`https://api.spotify.com/v1/playlists/${playlistId}`, {
-    //         method: "POST",
-    //         headers: {
-    //         //"content-type": "application/json",
-    //         "accept": "application/json",
-    //         "Authorization": "Bearer BQB3uKLk12aw3PaiRMatYCQzr6NfXeOBDqN9hBp6QxmvUCNVBJTpH_lRShG2Lq8qOFmMEws244KmJQTKHBD_ykr1AJNtRw5s9Ib_2Vz37OWO3P27A-Tw3ZSooPmoGMIakQMwj4Gy3WC8DGWaI29ufpeN792UT0h4GCbVhOADfC4E7QC0YxpzUYUkc4ppZ4aNeWaKhwkO56R1WX3JPcRk1IzvunJrh1gSjnPNeHBmE0aYP72Ri0KOtVqIJ8MfdH0ZSrU"
-    //         },
-    //         body: JSON.stringify(
-    //             {"uris": [`spotify:track:${songUri}`]}
-    //         )
-    //     })//.then(resp => resp.json())
-    // }
-
-    // getSongsFromSpotify = (term) => {
-    //     fetch(`http://localhost:3000/api/v1/getSong/${term}`, {
-    //       method: "POST",
-    //       headers: Headers()
-    //     }).then(resp => resp.json())
-    //       .then(data => {
-    //         this.setState({
-    //           searchResults: data.tracks.items
-    //         })
-    //       })
-    //   }
-    
-
     render(){
         if(!this.props.showModal){
             return null;
@@ -71,7 +42,7 @@ class SpottyModal extends React.Component {
                     >{playlist.name}</Dropdown.Item>
                 })
 
-                return <div onClick={ this.handleSearchSelection }>
+                return <div onClick={ localStorage.setItem("searchSelection", JSON.stringify(track))} >
                         <p>{track.name}</p>
                         <p>By: { track.artists[0].name}</p>
                         <iframe src={songUri} width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>

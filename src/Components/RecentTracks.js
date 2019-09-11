@@ -19,8 +19,11 @@ class RecentTracks extends React.Component {
 
     render(){
         
-        // const recentTracks = JSON.parse(localStorage.getItem("recentTracks"))
+        // var unique = this.state.recentTracks.map(track => track.name);
+        // unique = unique.filter(function(v,i) { return unique.indexOf(v) == i; });
 
+        console.log(this.state.recentTracks)
+        
         let eachTrack = this.state.recentTracks.map(track => {
             return <Songcard song={ track } />
         })

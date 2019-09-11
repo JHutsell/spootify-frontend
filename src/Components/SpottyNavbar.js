@@ -64,11 +64,11 @@ class SpottyNavbar extends React.Component {
         if (this.state.searchTerm!==
         "") this.props.handleSearchSong(this.state.searchTerm)
     }
-    
+
     render() {
         return(
             <div className="navbar-container">
-                <Navbar bg="dark" variant="dark" expand="lg">
+                <Navbar bg="success" variant="dark" expand="lg">
                     <Nav.Link onClick={ this.handleHomeButton }>SPOOTIFY</Nav.Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">

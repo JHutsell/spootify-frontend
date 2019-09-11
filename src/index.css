@@ -14,3 +14,41 @@ body {
   margin-right: 200px;
   margin-left: 100px;
 }
+
+.recco-images {
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  white-space: nowrap;
+  max-width: 100vw;
+  min-width: 100vh;
+  margin-right: 200px;
+  margin-left: 100px;
+}
+
+.recco-image{
+  position: relative;
+  display: inline-block;
+}
+
+.each-recco-image {
+  height: 200px;
+  width:200px;
+  object-fit:cover;
+}
+
+.recco-image .image-caption{
+  width:190px;
+  align-self: center;
+  position: absolute;
+  z-index: 999;
+  margin: 0 auto;
+  left: 10px;
+  border: solid 2px;
+  background: grey;
+  /* right: 0; */
+  top: 0; /* Adjust this value to move the positioned div up and down */
+  text-align: center;
+  color: white;
+  /* width: 200px; Set the width of the positioned div */
+}
