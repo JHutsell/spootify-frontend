@@ -62,3 +62,31 @@ body {
   /* width: 200px; Set the width of the positioned div */
 }
 
+.song-card {
+  border: solid white 5px;
+  width: 1000px;
+  margin-left: 100px;
+  padding-top: 20px;
+}
+
+li:hover {
+  background-color: rgb(90, 196, 96);
+  zoom: 1.5;
+}
+
+.boots-and-pants {
+  padding-top: 20px
+}
+
+.login-page {
+  padding-top: 200px
+}
+
+.search-bar {
+  padding-left: 500px
+}
+
+.profile-img {
+  border-radius: 70%
+}
+

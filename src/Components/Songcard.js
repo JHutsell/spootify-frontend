@@ -20,7 +20,7 @@ class Songcard extends React.Component {
             <div className="recentTracks" onClick = { this.handleClick }>
                 { this.state.clicked === true 
                     ? 
-                (<div><h3>{this.props.song.track.name}</h3>
+                (<div className="song-card"><h3>{this.props.song.track.name}</h3>
                 <br />
                 <h4>BY: {this.props.song.track.artists[0].name}</h4>
                 <br /><br />

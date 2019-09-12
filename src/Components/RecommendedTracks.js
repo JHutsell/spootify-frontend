@@ -61,14 +61,13 @@ class RecommendedTracks extends React.Component {
         eachTrack = this.state.reccoTracks.map(track => {
 
             dropdownItems = this.state.playlists.map(playlist => {
-                console.log(playlist)
                 return <Dropdown.Item href="#/action-1" onSelect={ () => this.addSongToPlaylist(playlist.id, track.uri.split(":")[2]) }
                 >{playlist.name}</Dropdown.Item>
             })
 
             const songUri = `https://open.spotify.com/embed/track/${track.uri.split(":")[2]}`
-         
-
+        
+            if (track.album.images[0])
             return <div className="recco-image">
             <MDBCol>
             <MDBCard style={{ width: "22rem", background:"black" }}>

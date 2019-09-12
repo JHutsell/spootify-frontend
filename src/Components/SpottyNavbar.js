@@ -86,12 +86,12 @@ class SpottyNavbar extends React.Component {
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                             </NavDropdown> */}
-                            <button onClick={ this.handleLogout }>Logout</button>
+                            <button onClick={ this.handleLogout } style={{"margin-left": "780px"}}>Logout</button>
                             </Nav>
-                            <Form onSubmit={this.handleSearchSubmit}  inline>
+                            {/* <Form onSubmit={this.handleSearchSubmit}  inline>
                             <FormControl type="text" onChange={ this.handleSearchInput } value={ this.state.searchTerm }  placeholder="Search" className="mr-sm-2" />
                             <button>Search</button>
-                            </Form>
+                            </Form> */}
                     </Navbar.Collapse>
                 </Navbar>
             </div>
