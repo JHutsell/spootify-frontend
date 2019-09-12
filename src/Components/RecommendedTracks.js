@@ -4,6 +4,8 @@ import RecentTracksAdapter from '../Adapters/RecentTracksAdapter';
 import PlaylistsAdapter from '../Adapters/PlaylistsAdapter';
 import Headers from '../Adapters/Headers'
 import {Dropdown, DropdownButton} from 'react-bootstrap';
+import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact';
+
 
 
 class RecommendedTracks extends React.Component {
@@ -11,7 +13,7 @@ class RecommendedTracks extends React.Component {
     state = {
         reccoTracks: [],
         login: false,
-        playlists: []
+        playlists: [],
     }
 
     addSongToPlaylist = (playlistId, songUri) => {
@@ -19,12 +21,6 @@ class RecommendedTracks extends React.Component {
             method: "POST",
             headers: Headers()
         }).then(resp => resp.json())
-    }
-
-    refresh=()=>{
-        if (this.state.reccoTracks.length<3){
-            window.location.reload(false)
-        }
     }
 
     componentDidMount() {
@@ -38,17 +34,14 @@ class RecommendedTracks extends React.Component {
                 headers: Headers()
                 }).then(resp => resp.json())
                     .then(data => {
-                        
                         this.setState({
                             reccoTracks: data,
-                            login:true
+                            login: true
                         })
                     })
             }
                 
             })
-            
-            
 
             PlaylistsAdapter.getPlaylists()
             .then(res => {
@@ -56,7 +49,6 @@ class RecommendedTracks extends React.Component {
                     playlists: res
                 })
             })
-
 
     }
     
@@ -75,20 +67,35 @@ class RecommendedTracks extends React.Component {
             })
 
             const songUri = `https://open.spotify.com/embed/track/${track.uri.split(":")[2]}`
+         
+
             return <div className="recco-image">
-                        <img className="each-recco-image" alt={track.name} src={track.album.images[1].url} /> 
-                        <div className="image-caption">{track.name}</div> 
-                        <iframe src={songUri} width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                        <DropdownButton id="dropdown-basic-button" variant="info" title="Add to a Playlist">
-                            {dropdownItems}
-                        </DropdownButton>
-                    </div>
-            
+            <MDBCol>
+            <MDBCard style={{ width: "22rem", background:"black" }}>
+                <MDBCardImage className="img-fluid" src={track.album.images[1].url} style={{ width: "22rem" }} waves />
+                <MDBCardBody>
+                <MDBCardTitle>{track.name}</MDBCardTitle>
+                <MDBCardText>
+                <iframe src={songUri} width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                </MDBCardText>
+                <DropdownButton id="dropdown-basic-button" variant="info" title="Add to a Playlist">
+                    {dropdownItems}
+                </DropdownButton>
+                </MDBCardBody>
+            </MDBCard>
+            </MDBCol>
+            </div>
         })
         
         return (
+            <div>
+                {eachTrack?
+                <h3>Recommended Tracks based on Recent Song History</h3>
+            :
+            null}
             <div className="recco-images">
             {eachTrack}
+            </div>
             </div>
         )
     }

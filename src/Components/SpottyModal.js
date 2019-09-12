@@ -57,17 +57,17 @@ class SpottyModal extends React.Component {
         }
 
         return(
-            <Modal.Dialog>
-                <Modal.Header closeButton>
+            <Modal.Dialog style={{ width: "70rem", height: "500px", overflow: "scroll", background:"black" }}>
+                <Modal.Header closeButton style={{background: "rgb(90, 196, 96)"}}>
                     <Modal.Title>Search Results</Modal.Title>
                 </Modal.Header>
 
-                <Modal.Body>
+                <Modal.Body style={{ width: "35rem", height: "500px", overflow: "scroll", background:"gray" }}>
                     {results}
                 </Modal.Body>
 
                 <Modal.Footer>
-                    <Button onClick={this.props.onClose} variant="primary">Close</Button>
+                    <Button onClick={this.props.onClose} variant="success">Close</Button>
                     {/* <Button variant="primary">Save changes</Button> */}
                 </Modal.Footer>
             </Modal.Dialog>

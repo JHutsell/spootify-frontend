@@ -12,7 +12,9 @@ import SpottyNavbar from './SpottyNavbar';
 import RecentTracksAdapter from '../Adapters/RecentTracksAdapter';
 import Auth from "../Adapters/Auth";
 import {Route, withRouter, Switch} from "react-router-dom";
+import {Form, FormControl} from 'react-bootstrap';
 import './App.css';
+import SpottyModal from './SpottyModal';
 
 class App extends Component {
   
@@ -20,8 +22,8 @@ class App extends Component {
     currentUser: {},
     loggedIn: false,
     searchResults: [],
-    reccoBasis: [],
-    reccoTracks: []
+    searchTerm: '',
+    showModal: false
   }
 
   handleCode = (code) =>{
@@ -35,6 +37,7 @@ class App extends Component {
           currentUser: res.auth_response_json,
           loggedIn: "true"
       }, this.props.history.push("/home"))
+      window.location.reload(false)
       })
   }
 
@@ -58,6 +61,36 @@ class App extends Component {
     this.getSongsFromSpotify(term)
   }
 
+  handleSearchInput = (e) => {
+    this.setState({
+        searchTerm: e.target.value
+    })
+}
+
+  handleSearchSubmit = (e) => {
+    e.preventDefault()
+    console.log("search")
+    // this.toggleModal()
+    this.setState({
+        showModal: true
+    });
+    // this.props.history.push("/home")
+    if (this.state.searchTerm!==
+    "") this.handleSearchSong(this.state.searchTerm)
+  }
+
+  toggleModal = () => {
+    this.setState({
+        showModal: !this.state.showModal
+    });
+}
+
+  handleCloseModal = () => {
+      this.setState({
+          showModal: false
+      });
+  }
+
   render() {
     
     return (
@@ -71,6 +104,12 @@ class App extends Component {
         :
         null
         }
+        <Form onSubmit={this.handleSearchSubmit}  inline>
+          <FormControl type="text" onChange={ this.handleSearchInput } value={ this.state.searchTerm }  placeholder="Search" className="mr-sm-2" />
+          <button>Search</button>
+        </Form>
+        <SpottyModal searchResults={ this.state.searchResults } showModal={ this.state.showModal } onClose={ this.handleCloseModal }/>
+
       <Switch>
         <Route exact path="/callback" component={this.handleCallback} />
         {/* <Route exact path='/callback' render={(routerProps) => <Callback currentUser = {this.state.currentUser} {...routerProps} />} /> */}

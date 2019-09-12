@@ -2,6 +2,14 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background: black
+}
+
+.App {
+  background: black;
+  color: yellow;
+  height: 100%;
+  list-style-type: none;
 }
 
 .recentTracks {
@@ -29,6 +37,7 @@ body {
 .recco-image{
   position: relative;
   display: inline-block;
+  color:yellow
 }
 
 .each-recco-image {
@@ -52,3 +61,4 @@ body {
   color: white;
   /* width: 200px; Set the width of the positioned div */
 }
+

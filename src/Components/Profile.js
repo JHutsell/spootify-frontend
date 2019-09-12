@@ -28,7 +28,11 @@ class Profile extends React.Component {
                 <h1>{display_name}</h1>
                 <h1>{email}</h1>
                 <a href={spotify_url}></a>
-                <img src={profile_img_url} alt="spotifyImg"/>
+                <img src={(profile_img_url !=="") ?
+                    profile_img_url 
+                    :
+                    ".../public/spootify-alt-avatar"
+                } alt="spotifyImg"/>
         </div>
         )
     }
