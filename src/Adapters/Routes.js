@@ -1,9 +1,9 @@
 const Routes = {
-    login: "https://git.heroku.com/spootify.git/login",
-    recent_tracks: "https://git.heroku.com/spootify.git/recent",
-    user_playlists: "https://git.heroku.com/spootify.git/userPlaylists",
-    top_artists: "https://git.heroku.com/spootify.git/topArtists",
-    current_song: "https://git.heroku.com/spootify.git/currentSong",
+    login: "https://spootify.herokuapp.com/login",
+    recent_tracks: "https://spootify.herokuapp.com/recent",
+    user_playlists: "https://spootify.herokuapp.com/userPlaylists",
+    top_artists: "https://spootify.herokuapp.com/topArtists",
+    current_song: "https://spootify.herokuapp.com/currentSong",
 };
 
 export default Routes;

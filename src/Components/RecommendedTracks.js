@@ -17,7 +17,7 @@ class RecommendedTracks extends React.Component {
     }
 
     addSongToPlaylist = (playlistId, songUri) => {
-        fetch(`https://git.heroku.com/spootify.git/postSong/${playlistId}/${songUri}`, {
+        fetch(`https://spootify.herokuapp.com/postSong/${playlistId}/${songUri}`, {
             method: "POST",
             headers: Headers()
         }).then(resp => resp.json())
@@ -29,7 +29,7 @@ class RecommendedTracks extends React.Component {
             .then(data => {
             
             if(data.length>0){
-                return fetch(`https://git.heroku.com/spootify.git/getReccos/${data[0].track.id}/${data[1].track.id}/${data[2].track.id}/${data[3].track.id}/${data[4].track.id}`, {
+                return fetch(`https://spootify.herokuapp.com/getReccos/${data[0].track.id}/${data[1].track.id}/${data[2].track.id}/${data[3].track.id}/${data[4].track.id}`, {
                 method: "POST",
                 headers: Headers()
                 }).then(resp => resp.json())
