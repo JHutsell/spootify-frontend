@@ -19,7 +19,7 @@ class SpottyModal extends React.Component {
     }
 
     addSongToPlaylist = (playlistId, songUri) => {
-        fetch(`http://localhost:3000/api/v1/postSong/${playlistId}/${songUri}`, {
+        fetch(`https://git.heroku.com/spootify.git/postSong/${playlistId}/${songUri}`, {
             method: "POST",
             headers: Headers()
         }).then(resp => resp.json())

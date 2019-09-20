@@ -83,10 +83,18 @@ li:hover {
 }
 
 .search-bar {
-  padding-left: 500px
+  padding-left: 500px;
+  padding-top: 50px
 }
 
 .profile-img {
   border-radius: 70%
+}
+
+.artist-details {
+  border: double white;
+}
+
+.playlist-detail {
 }
 

@@ -46,7 +46,7 @@ class App extends Component {
   }
   
   getSongsFromSpotify = (term) => {
-    fetch(`http://localhost:3000/api/v1/getSong/${term}`, {
+    fetch(`https://git.heroku.com/spootify.git/getSong/${term}`, {
       method: "POST",
       headers: Headers()
     }).then(resp => resp.json())
@@ -101,7 +101,7 @@ class App extends Component {
         <div className="boots-and-pants"><h1><marquee>BOOTS_AND_PANTS_AND_BOOTS_AND_PANTS</marquee></h1></div>
         <SpottyNavbar handleSearchSong={ this.handleSearchSong } searchResults={ this.state.searchResults } history={ this.props.history }/>
         <Form onSubmit={this.handleSearchSubmit} className="search-bar"  inline>
-          <h4>Search for a song:</h4> 
+          <h4 style={{"padding-right": "7px"}}>Search for a song:   </h4> 
           <br />
           <FormControl type="text" onChange={ this.handleSearchInput } value={ this.state.searchTerm }  placeholder="Search" className="mr-sm-2" />
           <button>Search</button>
