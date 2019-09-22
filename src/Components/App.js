@@ -46,7 +46,7 @@ class App extends Component {
   }
   
   getSongsFromSpotify = (term) => {
-    fetch(`https://spootify.herokuapp.com/getSong/${term}`, {
+    fetch(`https://spootify.herokuapp.com/api/v1/getSong/${term}`, {
       method: "POST",
       headers: Headers()
     }).then(resp => resp.json())
