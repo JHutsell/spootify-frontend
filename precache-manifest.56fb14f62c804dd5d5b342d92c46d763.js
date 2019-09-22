@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d200af9509d599c45640c476b3a7dd6d",
+    "revision": "1c1305a927da3a231322b5802fc16d41",
     "url": "/spootify-frontend/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/spootify-frontend/static/css/2.3b4a6f6a.chunk.css"
   },
   {
-    "revision": "efef259b74a838eba9f6",
+    "revision": "74ffeb20afc68c963d3f",
     "url": "/spootify-frontend/static/css/main.d33bcd34.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/spootify-frontend/static/js/2.9fe24c1e.chunk.js"
   },
   {
-    "revision": "efef259b74a838eba9f6",
-    "url": "/spootify-frontend/static/js/main.89f971a2.chunk.js"
+    "revision": "74ffeb20afc68c963d3f",
+    "url": "/spootify-frontend/static/js/main.d28e3da4.chunk.js"
   },
   {
     "revision": "abbf9d7e202a664d1e9d",
