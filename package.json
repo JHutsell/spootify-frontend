@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://jhutsell.github.io/spootify-frontend/",
   "dependencies": {
+    "@svgr/webpack": "^4.3.2",
     "bootstrap": "^4.3.1",
     "mdbreact": "^4.19.2",
     "react": "^16.3.2",
