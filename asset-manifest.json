@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/spootify-frontend/static/css/main.d33bcd34.chunk.css",
-    "main.js": "/spootify-frontend/static/js/main.fe70f62d.chunk.js",
-    "main.js.map": "/spootify-frontend/static/js/main.fe70f62d.chunk.js.map",
+    "main.js": "/spootify-frontend/static/js/main.f9dd7717.chunk.js",
+    "main.js.map": "/spootify-frontend/static/js/main.f9dd7717.chunk.js.map",
     "runtime-main.js": "/spootify-frontend/static/js/runtime-main.3516d43f.js",
     "runtime-main.js.map": "/spootify-frontend/static/js/runtime-main.3516d43f.js.map",
     "static/css/2.b5e68cd8.chunk.css": "/spootify-frontend/static/css/2.b5e68cd8.chunk.css",
     "static/js/2.b8b44784.chunk.js": "/spootify-frontend/static/js/2.b8b44784.chunk.js",
     "static/js/2.b8b44784.chunk.js.map": "/spootify-frontend/static/js/2.b8b44784.chunk.js.map",
     "index.html": "/spootify-frontend/index.html",
-    "precache-manifest.5f76dfa77b73fcce419757100c0afafe.js": "/spootify-frontend/precache-manifest.5f76dfa77b73fcce419757100c0afafe.js",
+    "precache-manifest.43479525e4a59583cf410a23d930068f.js": "/spootify-frontend/precache-manifest.43479525e4a59583cf410a23d930068f.js",
     "service-worker.js": "/spootify-frontend/service-worker.js",
     "static/css/2.b5e68cd8.chunk.css.map": "/spootify-frontend/static/css/2.b5e68cd8.chunk.css.map",
     "static/css/main.d33bcd34.chunk.css.map": "/spootify-frontend/static/css/main.d33bcd34.chunk.css.map",
