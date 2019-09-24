@@ -4,7 +4,7 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 // import 'bootstrap/dist/css/bootstrap-theme.css';
 import App from './Components/App';
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import registerServiceWorker from './registerServiceWorker';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
@@ -12,9 +12,9 @@ import 'mdbreact/dist/css/mdb.css';
 
 
 const MyApp = () =>(
-    <Router>
+    <HashRouter>
         <App />
-    </Router>
+    </HashRouter>
 );
 
 
