@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fbf8e446b2b00d620fb2244ef978457f",
+    "revision": "1e5391145f3528614c802a91195779a7",
     "url": "/spootify-frontend/index.html"
   },
   {
-    "revision": "66de47b18aab6e863448",
+    "revision": "88a297b7d00f26f7a9fe",
     "url": "/spootify-frontend/static/css/2.b5e68cd8.chunk.css"
   },
   {
-    "revision": "0e83ea2ce550cfcc98ea",
+    "revision": "fdab1e1c21d94045300c",
     "url": "/spootify-frontend/static/css/main.d33bcd34.chunk.css"
   },
   {
-    "revision": "66de47b18aab6e863448",
-    "url": "/spootify-frontend/static/js/2.49c9d4cb.chunk.js"
+    "revision": "88a297b7d00f26f7a9fe",
+    "url": "/spootify-frontend/static/js/2.b8b44784.chunk.js"
   },
   {
-    "revision": "0e83ea2ce550cfcc98ea",
-    "url": "/spootify-frontend/static/js/main.10c3c378.chunk.js"
+    "revision": "fdab1e1c21d94045300c",
+    "url": "/spootify-frontend/static/js/main.afd6c580.chunk.js"
   },
   {
     "revision": "abbf9d7e202a664d1e9d",
