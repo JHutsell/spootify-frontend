@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/spootify-frontend/precache-manifest.7c534c4435f44a191424d2ef2c426450.js"
+  "/spootify-frontend/precache-manifest.5f76dfa77b73fcce419757100c0afafe.js"
 );
 
 self.addEventListener('message', (event) => {
