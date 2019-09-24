@@ -11,12 +11,10 @@ import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 
 
-const MyApp = () =>(
+ReactDOM.render(
     <HashRouter>
         <App />
-    </HashRouter>
-);
+    </HashRouter>, document.getElementById('root'));
 
 
-ReactDOM.render(<MyApp />, document.getElementById('root'));
-registerServiceWorker();
+serviceWorker.unregister();
