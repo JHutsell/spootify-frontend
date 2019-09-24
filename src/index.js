@@ -12,9 +12,9 @@ import 'mdbreact/dist/css/mdb.css';
 
 
 ReactDOM.render(
-    <BrowserRouter>
-        <Route path="/" component={App} />
-    </BrowserRouter>, document.getElementById('root'));
+    <HashRouter>
+        <App />
+    </HashRouter>, document.getElementById('root'));
 
 
 serviceWorker.unregister();
