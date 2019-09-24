@@ -121,7 +121,6 @@ class App extends Component {
         <SpottyModal searchResults={ this.state.searchResults } showModal={ this.state.showModal } onClose={ this.handleCloseModal }/>
 
       <Switch>
-        <Route path="/:access_token(access_token=.*)" component={Callback} /> 
         <Route path="/callback" component={this.handleCallback} />
         {/* <Route exact path='/callback' render={(routerProps) => <Callback currentUser = {this.state.currentUser} {...routerProps} />} /> */}
         <Route exact path='/home' render={(routerProps) => <Home currentUser = {this.state.currentUser} {...routerProps} />} />
