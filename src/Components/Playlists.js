@@ -32,7 +32,7 @@ class Playlists extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        fetch(`https://spootify.herokuapp.com/api/v1/createNewPlaylist/${this.state.name}`, {
+        fetch(` https://spootify-backend.herokuapp.com/api/v1/createNewPlaylist/${this.state.name}`, {
             method: "POST",
             headers: Headers()
             // body: JSON.stringify({name: this.state.name})

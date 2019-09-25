@@ -46,7 +46,7 @@ class App extends Component {
   }
   
   getSongsFromSpotify = (term) => {
-    fetch(`https://spootify.herokuapp.com/api/v1/getSong/${term}`, {
+    fetch(` https://spootify-backend.herokuapp.com/api/v1/getSong/${term}`, {
       method: "POST",
       headers: Headers()
     }).then(resp => resp.json())
@@ -92,10 +92,9 @@ class App extends Component {
   }
 
   render() {
-    
     return (
       <div className="App">
-
+        
         {localStorage.loggedIn? 
         <div>
         <div className="boots-and-pants"><h1><marquee>BOOTS_AND_PANTS_AND_BOOTS_AND_PANTS</marquee></h1></div>
@@ -123,8 +122,7 @@ class App extends Component {
       <Switch>
         <Route path="/callback" component={this.handleCallback} />
         {/* <Route exact path='/callback' render={(routerProps) => <Callback currentUser = {this.state.currentUser} {...routerProps} />} /> */}
-        <Route exact path='/home' render={(routerProps) => <Home currentUser = {this.state.currentUser} {...routerProps} />} />
-        <Route exact path='/profile' render={(routerProps) => <Profile currentUser = {this.state.currentUser} {...routerProps} />} />
+        <Route exact path='/home' render={(routerProps) => <Home currentUser = {this.state.currentUser} {...routerProps} />} />        <Route exact path='/profile' render={(routerProps) => <Profile currentUser = {this.state.currentUser} {...routerProps} />} />
         <Route path="/recentTracks" render={(routerProps)=> <RecentTracks recentTracks={ this.state.recentTracks } {...routerProps} />} />
         <Route path="/playlists" render={(routerProps)=> <Playlists playlists={ this.state.playlists } {...routerProps} />} />
         <Route path="/topArtists" render={(routerProps)=> <TopArtists topArtists={ this.state.topArtists } {...routerProps} />} />
@@ -137,4 +135,4 @@ class App extends Component {
 }
 
 
-export default App;
+export default withRouter(App);
