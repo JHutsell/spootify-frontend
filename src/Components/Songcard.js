@@ -21,10 +21,9 @@ class Songcard extends React.Component {
                 { this.state.clicked === true 
                     ? 
                 (<div className="song-card"><h3>{this.props.song.track.name}</h3>
-                <br />
                 <h4>BY: {this.props.song.track.artists[0].name}</h4>
-                <br /><br />
-                <img src={this.props.song.track.album.images[0].url} />
+                <br />
+                <img src={this.props.song.track.album.images[1].url} />
                 <br /> 
                 <iframe src={songUri} width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>)
                     : 

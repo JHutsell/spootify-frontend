@@ -28,7 +28,13 @@ class RecentTracks extends React.Component {
             return <Songcard song={ track } />
         })
 
-        return eachTrack
+        return (
+            <div className="recent-tracks-container">
+                <div className="recent-tracks-inner">
+                {eachTrack}
+                </div>
+            </div>
+        )
     }
 
 }

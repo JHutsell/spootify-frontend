@@ -23,8 +23,13 @@ class TopArtists extends React.Component {
             return <Artistcard artist={ topArtist} />
         })
 
-        console.log(this.state)
-        return eachArtist
+        return (
+            <div className="top-artists-container">
+                <div className="top-artists-inner">
+                    {eachArtist}
+                </div>
+            </div>
+        )
     }
 
 }

@@ -53,13 +53,15 @@ class Playlists extends React.Component {
     
 
         return (
-                <div>
+                <div className="playlists-container">
                     { !allLists.length !== 0 ?
                     <div>
                     {allLists}
-                    <form onSubmit={ this.handleSubmit } style={{"padding-left": "25%"}} className="new-playlist-form">
+                    <br/>
+                    <h4>Create a new Playlist</h4>
+                    <form onSubmit={ this.handleSubmit } style={{"padding-left": "18%"}} className="new-playlist-form">
                     <MDBInput onChange={ this.handleInputChange } value={ this.state.name } style={{width: "700px"}} name="name" label="New Playlist" background size="lg" />
-                    <MDBBtn gradient="blue" type="submit" style={{"margin-right": "390px"}}>Submit   🎶</MDBBtn>
+                    <MDBBtn gradient="blue" type="submit" style={{"margin-right": "200px"}}>Submit   🎶</MDBBtn>
                     </form>
                     </div>
                     :

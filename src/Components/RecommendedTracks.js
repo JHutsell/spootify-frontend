@@ -87,7 +87,7 @@ class RecommendedTracks extends React.Component {
         })
         
         return (
-            <div>
+            <div className="recco-tracks-container">
                 {eachTrack?
                 <h3>Recommended Tracks based on Recent Song History</h3>
             :

@@ -1,15 +1,17 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
+  font-family: Montserrat;
   background: black
 }
 
 .App {
-  background: black;
+  background: rgb(32, 32, 32);
   color: yellow;
   height: 100%;
   list-style-type: none;
+  font-family: Montserrat;
 }
 
 .recentTracks {
@@ -46,27 +48,8 @@ body {
   object-fit:cover;
 }
 
-.recco-image .image-caption{
-  width:190px;
-  align-self: center;
-  position: absolute;
-  z-index: 999;
-  margin: 0 auto;
-  left: 10px;
-  border: solid 2px;
-  background: grey;
-  /* right: 0; */
-  top: 0; /* Adjust this value to move the positioned div up and down */
-  text-align: center;
-  color: white;
-  /* width: 200px; Set the width of the positioned div */
-}
-
-.song-card {
-  border: solid white 5px;
-  width: 1000px;
-  margin-left: 100px;
-  padding-top: 20px;
+.recco-tracks-container {
+  margin-left: 70px;
 }
 
 li:hover {
@@ -74,12 +57,77 @@ li:hover {
   zoom: 1.5;
 }
 
-.boots-and-pants {
-  padding-top: 20px
+.spootify-text {
+  font-size: 100px;
+  margin-bottom: 10px;
+  position: relative;
+  left: 20px;
+  bottom: 700px;
+  top: -150px;
+  text-align: center
 }
 
 .login-page {
-  padding-top: 200px
+  padding-top: 200px;
+  background-image: url(./images/spotify-background.jpg);
+  height: 100vh;
+  font-family: Montserrat;
+}
+
+.login-description {
+  border: 2px solid rgb(5, 88, 16);
+  background-color: black;
+  width: 400px;
+  margin-left: 540px;
+  position: relative;
+  top: -150px
+  /* margin-bottom: 20px; */
+  /* position: relative */
+}
+
+.login-content {
+  border: 2px solid rgb(5, 88, 16);
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -140px;
+  width: 240px;
+  margin-left: 625px;
+  background-color: black;
+  height: 325px
+}
+
+.profile-box, .playlists-container, .recent-tracks-container, .top-artists-container {
+  border: 10px solid green;
+  width: 1100px;
+  margin-left: 175px;
+  background-color: black;
+  z-index: 0;
+  text-align: center
+}
+
+.recent-tracks-inner {
+  position: relative;
+  left: 45px;
+}
+
+.top-artists-inner {
+  position: relative;
+}
+
+.song-card {
+  border: solid white 5px;
+  background: rgb(32, 32, 32)
+}
+
+.artist-details {
+  border: solid white 5px;
+  background: rgb(32, 32, 32)
+
+}
+
+.new-playlist-form {
+  margin-right: 10px
 }
 
 .search-bar {
@@ -91,10 +139,8 @@ li:hover {
   border-radius: 70%
 }
 
-.artist-details {
-  border: double white;
-}
-
 .playlist-detail {
+  border: 2px double green;
+  z-index: 1
 }
 

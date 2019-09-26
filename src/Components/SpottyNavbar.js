@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, Form, FormControl, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 import SpottyModal from './SpottyModal';
 
@@ -86,7 +86,7 @@ class SpottyNavbar extends React.Component {
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                             </NavDropdown> */}
-                            <button onClick={ this.handleLogout } style={{"margin-left": "780px"}}>Logout</button>
+                            <Button onClick={ this.handleLogout } style={{"margin-left": "780px"}}>Logout</Button>
                             </Nav>
                             {/* <Form onSubmit={this.handleSearchSubmit}  inline>
                             <FormControl type="text" onChange={ this.handleSearchInput } value={ this.state.searchTerm }  placeholder="Search" className="mr-sm-2" />

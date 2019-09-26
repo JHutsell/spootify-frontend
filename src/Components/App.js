@@ -94,10 +94,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        
         {localStorage.loggedIn? 
-        <div>
-        <div className="boots-and-pants"><h1><marquee>BOOTS_AND_PANTS_AND_BOOTS_AND_PANTS</marquee></h1></div>
+        <span>
         <SpottyNavbar handleSearchSong={ this.handleSearchSong } searchResults={ this.state.searchResults } history={ this.props.history }/>
         <Form onSubmit={this.handleSearchSubmit} className="search-bar"  inline>
           <h4 style={{"padding-right": "7px"}}>Search for a song:   </h4> 
@@ -105,7 +103,7 @@ class App extends Component {
           <FormControl type="text" onChange={ this.handleSearchInput } value={ this.state.searchTerm }  placeholder="Search" className="mr-sm-2" />
           <button>Search</button>
         </Form>
-        </div>
+        </span>
       :
       null
       }

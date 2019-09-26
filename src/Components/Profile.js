@@ -23,7 +23,7 @@ class Profile extends React.Component {
         const {profile_img_url, display_name, spotify_url, email} = currentUser
         console.log(this.state)
         return(
-            <div>
+            <div className="profile-box">
                 {/* <SpottyNavbar history={ this.props.history }/> */}
                 <h1>{display_name}</h1>
                 <h1>{email}</h1>
