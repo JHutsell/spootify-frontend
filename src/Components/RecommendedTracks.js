@@ -17,7 +17,7 @@ class RecommendedTracks extends React.Component {
     }
 
     addSongToPlaylist = (playlistId, songUri) => {
-        fetch(` https://spootify-backend.herokuapp.com/api/v1/postSong/${playlistId}/${songUri}`, {
+        fetch(` http://localhost:3000/api/v1/postSong/${playlistId}/${songUri}`, {
             method: "POST",
             headers: Headers()
         }).then(resp => resp.json())
@@ -29,7 +29,7 @@ class RecommendedTracks extends React.Component {
             .then(data => {
             
             if(data.length>0){
-                return fetch(` https://spootify-backend.herokuapp.com/api/v1/getReccos/${data[0].track.id}/${data[1].track.id}/${data[2].track.id}/${data[3].track.id}/${data[4].track.id}`, {
+                return fetch(` http://localhost:3000/api/v1/getReccos/${data[0].track.id}/${data[1].track.id}/${data[2].track.id}/${data[3].track.id}/${data[4].track.id}`, {
                 method: "POST",
                 headers: Headers()
                 }).then(resp => resp.json())
