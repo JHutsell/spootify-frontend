@@ -49,7 +49,7 @@ body {
 }
 
 .recco-tracks-container {
-  margin-left: 70px;
+  margin-left: 90px;
 }
 
 li:hover {
@@ -142,5 +142,10 @@ li:hover {
 .playlist-detail {
   border: 2px double green;
   z-index: 1
+}
+
+.search-modal {
+  position: relative;
+  z-index: 2
 }
 

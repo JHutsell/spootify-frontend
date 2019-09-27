@@ -26,14 +26,14 @@ class SpottyModal extends React.Component {
     }
 
     render(){
-        if(!this.props.showModal){
+        if (!this.props.showModal){
             return null;
         }
 
         let results;
         
         console.log(this.props.searchResults)
-        if(this.props.searchResults) {
+        if (this.props.searchResults) {
             results = this.props.searchResults.map(track => {
                 const songUri = `https://open.spotify.com/embed/track/${track.uri.split(":")[2]}`
                 const dropdownItems = this.state.playlists.map(playlist => {
@@ -43,26 +43,23 @@ class SpottyModal extends React.Component {
                 })
 
                 return <div onClick={ localStorage.setItem("searchSelection", JSON.stringify(track))} >
-                        <p>{track.name}</p>
-                        <p>By: { track.artists[0].name}</p>
-                        <iframe src={songUri} width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                        <DropdownButton id="dropdown-basic-button" variant="info" title="Add to a Playlist">
-                            {dropdownItems}
-                            {/* <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item> */}
-                        </DropdownButton>
+                            <p>{track.name}</p>
+                            <p>By: { track.artists[0].name}</p>
+                            <iframe src={songUri} width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                            <DropdownButton id="dropdown-basic-button" variant="info" title="Add to a Playlist">
+                                {dropdownItems}
+                            </DropdownButton>
                         </div>
             })
         }
 
-        return(
-            <Modal.Dialog style={{ width: "70rem", height: "700px", overflow: "scroll", background:"black" }}>
+        return (
+            <Modal.Dialog style={{ width: "70rem", height: "650px", overflow: "scroll", background:"black", "z-index": "0" }} className="search-modal">
                 <Modal.Header closeButton onClick={this.props.onClose} style={{background: "rgb(90, 196, 96)"}}>
                     <Modal.Title>Search Results</Modal.Title>
                 </Modal.Header>
 
-                <Modal.Body style={{ width: "35rem", height: "500px", overflow: "scroll", background:"gray" }}>
+                <Modal.Body style={{ width: "35rem", height: "500px", overflow: "scroll", background:"black" }}>
                     {results}
                 </Modal.Body>
 
