@@ -140,8 +140,9 @@ li:hover {
 }
 
 .playlist-detail {
-  border: 2px double green;
-  z-index: 1
+  border: 5px solid white;
+  z-index: 1;
+  background-color:  rgb(32, 32, 32)
 }
 
 .search-modal {

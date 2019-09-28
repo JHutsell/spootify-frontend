@@ -22,6 +22,14 @@
   font-size: large;
 }
 
+.modal-dialog.search-modal{
+  position: absolute;
+  left:500px;
+  top: 50px;
+  z-index:999 !important;
+  border: 5px solid white
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
