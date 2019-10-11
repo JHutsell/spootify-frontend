@@ -103,7 +103,9 @@ li:hover {
   margin-left: 175px;
   background-color: black;
   z-index: 0;
-  text-align: center
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .recent-tracks-inner {
@@ -133,6 +135,11 @@ li:hover {
 .search-bar {
   padding-left: 500px;
   padding-top: 50px
+}
+
+.search-result {
+  border: 5px solid green;
+  margin-right: 15px
 }
 
 .profile-img {

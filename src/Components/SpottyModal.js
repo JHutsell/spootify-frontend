@@ -42,13 +42,15 @@ class SpottyModal extends React.Component {
                     >{playlist.name}</Dropdown.Item>
                 })
 
-                return <div onClick={ localStorage.setItem("searchSelection", JSON.stringify(track))} >
+                return <div onClick={ localStorage.setItem("searchSelection", JSON.stringify(track))} className="search-result" >
+                            <br />
                             <p>{track.name}</p>
                             <p>By: { track.artists[0].name}</p>
                             <iframe src={songUri} width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                             <DropdownButton id="dropdown-basic-button" variant="info" title="Add to a Playlist">
                                 {dropdownItems}
                             </DropdownButton>
+                            <br />
                         </div>
             })
         }
@@ -59,7 +61,7 @@ class SpottyModal extends React.Component {
                     <Modal.Title>Search Results</Modal.Title>
                 </Modal.Header>
 
-                <Modal.Body style={{ width: "35rem", height: "500px", overflow: "scroll", background:"black" }}>
+                <Modal.Body style={{ width: "35rem", height: "500px", "padding-right": "70px", overflow: "scroll", background:"black" }}>
                     {results}
                 </Modal.Body>
 
