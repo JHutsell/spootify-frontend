@@ -66,8 +66,7 @@ class SpottyModal extends React.Component {
                 </Modal.Body>
 
                 <Modal.Footer style={{background: "rgb(90, 196, 96)"}}>
-                    <Button onClick={this.props.onClose} variant="success">Close</Button>
-                    {/* <Button variant="primary">Save changes</Button> */}
+                    <Button onClick={this.props.onClose} variant="primary" size="sm">Close</Button>
                 </Modal.Footer>
             </Modal.Dialog>
 
