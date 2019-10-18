@@ -60,12 +60,21 @@ class RecommendedTracks extends React.Component {
             
         eachTrack = this.state.reccoTracks.map(track => {
 
+            let title;
+
             dropdownItems = this.state.playlists.map(playlist => {
                 return <Dropdown.Item href="#/action-1" onSelect={ () => this.addSongToPlaylist(playlist.id, track.uri.split(":")[2]) }
                 >{playlist.name}</Dropdown.Item>
-            })
+            });
+    
+            { track.name.length <= 21 
+                ?
+                title = track.name
+                :
+                title = track.name.substr(0, 19) + "..."
+            }
 
-            const songUri = `https://open.spotify.com/embed/track/${track.uri.split(":")[2]}`
+            const songUri = `https://open.spotify.com/embed/track/${track.uri.split(":")[2]}`;
         
             if (track.album.images[0])
             return <div className="recco-image">
@@ -73,7 +82,7 @@ class RecommendedTracks extends React.Component {
             <MDBCard style={{ width: "22rem", background:"black" }}>
                 <MDBCardImage className="img-fluid" src={track.album.images[1].url} style={{ width: "22rem" }} waves />
                 <MDBCardBody>
-                <MDBCardTitle>{track.name}</MDBCardTitle>
+                <MDBCardTitle>{title}</MDBCardTitle>
                 <MDBCardText>
                 <iframe src={songUri} width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                 </MDBCardText>
@@ -88,6 +97,7 @@ class RecommendedTracks extends React.Component {
         
         return (
             <div className="recco-tracks-container">
+                <br />
                 {eachTrack?
                 <h3>Recommended Tracks based on Recent Song History</h3>
             :

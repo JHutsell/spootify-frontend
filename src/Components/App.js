@@ -12,7 +12,7 @@ import SpottyNavbar from './SpottyNavbar';
 import RecentTracksAdapter from '../Adapters/RecentTracksAdapter';
 import Auth from "../Adapters/Auth";
 import {Route, withRouter, Switch} from "react-router-dom";
-import {Form, FormControl} from 'react-bootstrap';
+import {Form, FormControl, Button} from 'react-bootstrap';
 import './App.css';
 import SpottyModal from './SpottyModal';
 
@@ -75,7 +75,7 @@ class App extends Component {
         showModal: true
     });
     // this.props.history.push("/home")
-    if (this.state.searchTerm!==
+    if (this.state.searchTerm !==
     "") this.handleSearchSong(this.state.searchTerm)
   }
 
@@ -95,15 +95,15 @@ class App extends Component {
     return (
       <div className="App">
         {localStorage.loggedIn? 
-        <span>
+        <div>
         <SpottyNavbar handleSearchSong={ this.handleSearchSong } searchResults={ this.state.searchResults } history={ this.props.history }/>
         <Form onSubmit={this.handleSearchSubmit} className="search-bar"  inline>
           <h4 style={{"padding-right": "7px"}}>Search for a song:   </h4> 
           <br />
           <FormControl type="text" onChange={ this.handleSearchInput } value={ this.state.searchTerm }  placeholder="Search" className="mr-sm-2" />
-          <button>Search</button>
+          <Button type="submit">Search</Button>
         </Form>
-        </span>
+        </div>
       :
       null
       }
